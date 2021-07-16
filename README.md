@@ -5,7 +5,7 @@ If you would link to know more detail please refer this link: https://dev.to/lav
 
 This post gives a step by step guide to setting up vue.js using webpack. You’ll need to have node installed on your computer, you’ll also need a basic knowledge of how vue works, and of course a code editor.
 Below are Steps:
-### 1. Installation of dependencies###
+### 1. Installation of dependencies ###
 In your terminal, use the mkdir command to create a project folder and use the cd command to change directory into the folder created.
 In the file you created, run the command `npm init –y` to create a `package.json` file
 Now that we have a `package.json` file to keep track of our dependencies, we can go ahead to install them.
@@ -42,7 +42,7 @@ Our package.json file should look like this after the installation process
   }
 }
 ```
-### 2. File/Folder structure###
+### 2. File/Folder structure ###
 Our folder structure would be similar to the default folder structure we get when using the vue cli to create a project. 
 So lets create a public folder and an src folder in the root of our project. 
 In the public folder, add a `favicon.ico` file and create an `index.html` file. 
@@ -180,7 +180,7 @@ then add this to our `About.vue` file
   </div>
 </template>
 ```
-### 3. Configure webpack to use babel loader, and vue loader###
+### 3. Configure webpack to use babel loader, and vue loader ###
 Babel loader helps transpile ECMAScript 2015+ code into JavaScript that can be run by older JavaScript engines. While vue loader helps transform vue components into plain JavaScript module.
 
 To configure webpack to use these loaders, we need to create two files namely, `babel.config.js`, and `webpack.config.js`.
@@ -260,7 +260,7 @@ From the code above we import VueLoaderPlugin from vue-loader and the path modul
 In the code above we see a module option where we define some rules, the first rule tells webpack to use babel loader to transpile all files having a .js extension excluding everything in the node_modules folder, while the second rule tells webpack to apply the vue loader to any file with a .vue extension.
 
 The resolve option in the code above has an alias and extension key value pair, alias has a value which defines a vue alias and helps us import vue packages without using relative path, while extension has a value which tells webpack how to resolve imports and enables us import files without the extension, you can read more about it here.
-### 4. Write scripts to start your server###
+### 4. Write scripts to start your server ###
 To see our setup work, we’ll need to write scripts in our package.json file to run the webpack-dev-server. So go into the package.json file and add these to the scripts object.
 ```json
 "build": "webpack --mode production",
@@ -269,7 +269,7 @@ To see our setup work, we’ll need to write scripts in our package.json file to
 Now we can go back to our terminal and run `npm run start` to start up webpack development server, our project should compile successfully else you can go through the steps again or drop a comment, I’ll be glad to help you out.
 
 N.B: We won't be able to view our project in the browser yet because we haven't configured the htmlWebpackPlugin and webpack doesn't know where to insert our bundle files.
-### 5. Loaders, Plugins, and Code Splitting###
+### 5. Loaders, Plugins, and Code Splitting ###
 Loaders and plugins are third-party extensions used in handling files with various extensions. Just like we used vue-loader to handling files with .vue extension, we have loaders and plugins for .scss files, .html files, images, etc.
 
 Basically when you import/require files or modules, webpack tests the path against all loaders and passes the file to whichever loader passes the test. you can read more about loaders here
@@ -395,7 +395,7 @@ Code Splitting is an optimization technique used in reducing bundle size into sm
 ```
 The code above tells webpack to create a runtime chunk, vendor chunk from our node_modules folder, and hash them. Now we should see a runtime bundle and a vendor bundle when we build the project again.
 
-### 6. Final webpack configuration and Observation###
+### 6. Final webpack configuration and Observation ###
 Our final `webpack.config.js` file should look like this
 ```js
 const { VueLoaderPlugin } = require("vue-loader");
