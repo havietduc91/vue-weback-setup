@@ -1,10 +1,10 @@
-#How to setup a vue project with webpack.#
+## How to setup a vue project with webpack. ##
+
 First of all, this repo just to practice create vue and webpack boilerplate myself.
 If you would link to know more detail please refer this link: https://dev.to/lavikara/setup-vue-webpack-and-babel-boo
 
 This post gives a step by step guide to setting up vue.js using webpack. You’ll need to have node installed on your computer, you’ll also need a basic knowledge of how vue works, and of course a code editor.
 Below are Steps:
-###Creating a folder and a package json file###
 ### 1. Installation of dependencies###
 In your terminal, use the mkdir command to create a project folder and use the cd command to change directory into the folder created.
 In the file you created, run the command `npm init –y` to create a `package.json` file
